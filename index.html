@@ -62,6 +62,487 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Python学习笔记（二）" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/26/Python学习笔记（二）/" class="article-date">
+  <time datetime="2019-01-26T14:51:46.086Z" itemprop="datePublished">2019-01-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/26/Python学习笔记（二）/">Python 学习笔记（二）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一个等号（=）表示赋值，简单点说就是把等号右边的值给到左边的变量中去。</p>
+<p>两个等号（==）有判断是否相等的意思。</p>
+<p><strong>input</strong> 函数有获取用户输入的任何内容并将其存储为字符串的作用。</p>
+<h3 id="什么是BIF？如何查看Python中的BIF多少？"><a href="#什么是BIF？如何查看Python中的BIF多少？" class="headerlink" title="什么是BIF？如何查看Python中的BIF多少？"></a>什么是BIF？如何查看Python中的BIF多少？</h3><ul>
+<li><strong>BIF(bulit in function)</strong></li>
+</ul>
+<p>内置函数，就是Python自身提供的函数功能，编程者直接使用即可，在Python或IDLE Shell中使用。</p>
+<ul>
+<li>查看Python中的内置函数（BIF）</li>
+</ul>
+<p>在Python Shell中运行<strong>dir(<strong>builtins</strong>)</strong>，如下图</p>
+<p><img src="https://i.imgur.com/JtiWWXH.png" alt=""></p>
+<p>一共82个内置函数，当编程者需要某个BIF的介绍时，可以通过语句  help(某个bif) 的形式查看Python提供的介绍。</p>
+<p><img src="https://i.imgur.com/eBJNkgo.png" alt=""></p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>变量名就像我们现实社会的名字，把一个值赋值给一个名字时Ta就会存储在内存中，称之为<strong>变量（variable）</strong>，在大多数语言中，都把这种行为称之为“给变量赋值”或“把值存储在变量中”。</p>
+<p>不过Python与大多数其他计算机语言的做法稍有不同，Ta并不是把值存储在变量中，而更像把名字贴在值的上边。</p>
+<p>所以有些Python程序员会说Python“没有变量”，只有“名字”。</p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
+<li><p>在使用变量前，需要先对其赋值</p>
+</li>
+<li><p>变量名可以包括字母，数字，下划线，但变量名不能以数字开头。<em>（和大多数编程语言一样受到C语言的影响）</em></p>
+</li>
+<li><p>字母可以是大写或小写，但大小写是不同的。也就是说fishc和FishC对于Python来说是完全不同的两个名字。</p>
+</li>
+<li><p>等号（=）是赋值的意思，左边是名字，右边是值，注意其位置。</p>
+</li>
+<li><p>变量的命名理论来说可以取任何合法的名字，但作为一个优秀的程序员，尽量给自己的变量取一个专业，具体的名字同时也方便了以后的查看。</p>
+</li>
+</ul>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>到目前为止，我们所认识的字符串就是引号内的东西，我们也把字符串叫做文本，文本和数字是截然不同的，例：</p>
+<p><img src="https://i.imgur.com/OUDwrow.png" alt=""></p>
+<blockquote>
+<p>要告诉Python创建一个字符串时，就要在字符两边加上引号，可以是单引号或者双引号，但无论用哪种引号都必须是成对出现的，不能一边单引号，另一边花心的用上双引号结尾。</p>
+</blockquote>
+<h4 id="如果字符串中出现单引号或者双引号怎么办？"><a href="#如果字符串中出现单引号或者双引号怎么办？" class="headerlink" title="如果字符串中出现单引号或者双引号怎么办？"></a>如果字符串中出现单引号或者双引号怎么办？</h4><p>例如我想打印字符串：Let’s go!<em>（里面包含有单引号）</em></p>
+<p><img src="https://i.imgur.com/2AGNsXb.png" alt=""></p>
+<p>Ta会报错，现在怎么办？</p>
+<p>如此，我们可以引用之前学过的一个知识点，转义符（\），将字符串’Let’s go!’中的’进行转义，我们再执行看看会发生什么</p>
+<p><img src="https://i.imgur.com/9eamj5s.png" alt=""></p>
+<p>Python正常的将我们的字符串打印了出来。</p>
+<p>还有一种方法，我们可以用双引号把Let’s go!引起来</p>
+<p><img src="https://i.imgur.com/3oiFC73.png" alt=""></p>
+<pre><code>用双引号还是单引号取决于字符串中存在的是单引还是双引，其是相反的，好比Let&apos;s go!里包含的是单引号，这里我们就需要用双引号引起来，反之也是，这样Python才可以正常打印出我们的字符串。
+</code></pre><h4 id="原始字符串"><a href="#原始字符串" class="headerlink" title="原始字符串"></a>原始字符串</h4><p>上面的两种方法，对比下第一种直接用反斜杠（\）进行转义看似更容易点，反斜杠好像是个好东西，但不妨试试打印：</p>
+<pre><code>&gt;&gt;&gt;str = &apos;C:\now&apos;
+</code></pre><p><img src="https://i.imgur.com/a07musT.png" alt=""></p>
+<p>python把\n用作回车了，其语法是没有问题的，但是这样就得不到我们最开始的字符串了，怎么办呢？</p>
+<p>我们可以用反斜杠对自身进行转义，也就是：</p>
+<p><img src="https://i.imgur.com/AfHsSmy.png" alt=""></p>
+<p>这样就可以解决一个反斜杠的问题，那么问题又来了，如果对于一个字符串有多个反斜杠，例：</p>
+<pre><code>&gt;&gt;&gt;str = &apos;C:\Frogram Files\Intel\WiFi\Help&apos;
+</code></pre><p>面对这种情况我们要是再进行反斜杠对自身进行转义，一个一个的添加的话就有点麻烦了，这时就用到了本节的一个重点：<strong>原始字符串</strong></p>
+<ul>
+<li><p>原始字符串的使用非常简单，只需要在字符串的前面加上一个英文字母<strong>r</strong>即可</p>
+<p>  str = r’C:\now’</p>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/rRur4g5.png" alt=""></p>
+<p>注意：原始字符串不能直接在结尾加反斜杠（\）</p>
+<p><img src="https://i.imgur.com/KVBzpTi.png" alt=""></p>
+<p>如果非要在结尾加反斜杠的话可以如下图操作：</p>
+<p><img src="https://i.imgur.com/6b7AS92.png" alt=""></p>
+<h4 id="长字符串"><a href="#长字符串" class="headerlink" title="长字符串"></a>长字符串</h4><p>如果希望得到一个跨越多行的字符串，例如：</p>
+<pre><code>漫漫人生历程中,总会面临种种变革与挑战，
+唯有苦于充实自己，
+勤于耕耘自己，勇于突破自己，
+才能把握自己走什么路，
+你的心就是开创簇新局面的马达，你的心就是开启通达门户的钥匙。
+</code></pre><p>想让Python打印这个有回车，且长的字符串时就需要用到一个小重点：<strong>三重引号字符串</strong></p>
+<p>如图：</p>
+<p><img src="https://i.imgur.com/Ety9YND.png" alt=""></p>
+<p>Python如我们的意愿按格式打印出了这个长字符串。</p>
+<h3 id="课后练习"><a href="#课后练习" class="headerlink" title="课后练习"></a>课后练习</h3><h4 id="如何查看Python中的内置函数（BIF）？"><a href="#如何查看Python中的内置函数（BIF）？" class="headerlink" title="如何查看Python中的内置函数（BIF）？"></a>如何查看Python中的内置函数（BIF）？</h4><p>在Python后IDLE中，输入dir(<strong>builtins</strong>)可以看到Python提供的内置函数列表（注意，builtins前后是两个下划线）其中小写的就是BIF。如果想具体查看某个BIF的功能，比如input，可以在shell中输入help（input），就会得到这个BIF的功能描述。</p>
+<h4 id="在Python看来：’FishC’和’fishc’一样吗？"><a href="#在Python看来：’FishC’和’fishc’一样吗？" class="headerlink" title="在Python看来：’FishC’和’fishc’一样吗？"></a>在Python看来：’FishC’和’fishc’一样吗？</h4><p>不一样，因为Python是一个”敏感的小女孩”，所以不要试图欺骗Ta，对Python来说，fishc和FishC是完全不同的两个名字，所以编程的时候一定要当心。不过Python会帮助解决可能因此出现的问题，例如只要当标识符已经赋值后才能在代码中使用，未赋值的标识符直接使用会导致运行时报错，所以你很快就可以根据经验发现此问题。</p>
+<h4 id="在Python中最重要的是什么？"><a href="#在Python中最重要的是什么？" class="headerlink" title="在Python中最重要的是什么？"></a>在Python中最重要的是什么？</h4><p><strong>缩进</strong>！缩进是Python的灵魂，缩进的严格要求使得Python的代码显的非常精简并且有层次。</p>
+<p>所以在Python里对待缩进要格外小心，如果没有正确的缩进，代码就达不到我们预期的效果（C语言打错了括号）之严重。</p>
+<p>如果在正确的位置输入冒号”:”，IDLE会自动进行下一行的缩进！</p>
+<h4 id="“-”与”-”表示的含义不同如果写串会怎么样？"><a href="#“-”与”-”表示的含义不同如果写串会怎么样？" class="headerlink" title="“=”与”==”表示的含义不同如果写串会怎么样？"></a>“=”与”==”表示的含义不同如果写串会怎么样？</h4><p>C语言的话，如果if(c == 1)写成if(c = 1)的话，程序就完全不按程序员原本的目的去执行，同样在Python这里，一样是行不通的，语法错误！注意：<strong>Python不允许if条件中赋值</strong>，所以Python会报错。</p>
+<h4 id="什么是”拼接”？"><a href="#什么是”拼接”？" class="headerlink" title="什么是”拼接”？"></a>什么是”拼接”？</h4><p>在一些编程语言里，我们可以将两个字符串”相加”在一起如：’I’+’Love’+’you’会得到’ILoveyou’。在Python里，这种做法就叫做拼接字符串，也就是拼接。</p>
+<h3 id="The-end"><a href="#The-end" class="headerlink" title="The end."></a>The end.</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/26/Python学习笔记（二）/" data-id="cjrdlgsvl00022knucxlg4pv2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-利用GitHub和Hexo搭建独立博客" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/26/利用GitHub和Hexo搭建独立博客/" class="article-date">
+  <time datetime="2019-01-26T14:51:46.075Z" itemprop="datePublished">2019-01-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/26/利用GitHub和Hexo搭建独立博客/">利用GitHub和Hexo搭建独立博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这是一篇纯小白篇的搭建博客的博文，也是我搭建好这个博客发布出的第一篇文章。在我搭建这个独立博客的时候遇到了许多大大小小的问题，有一部分通过别人的教程一步一步的解决了，有些在搜索引擎上也得到了一定的答案，但并不是所有答案都得到了解决，所以我打算我的第一篇博客就记录下我搭建的全过程吧 正如我开头时就已表明的那样，也正好复习和巩固。</p>
+<h3 id="必备的软件安装"><a href="#必备的软件安装" class="headerlink" title="必备的软件安装"></a>必备的软件安装</h3><ul>
+<li><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a><img src="https://upload-images.jianshu.io/upload_images/1712159-b460a3d917ed2ad7.png" alt="">直接去官网下载对应自己系统的操作系统就好，下载安装应该没什么难度，只要清楚自己电脑是基于32位还是64位的操作系统就好，在桌面上我的电脑击右键属性里可查。</p>
+</li>
+<li><p><a href="https://npm.taobao.org/mirrors/git-for-windows/v2.20.1.windows.1/" target="_blank" rel="noopener">Git</a><br><em>因为Git的官网在国外，直接在官网下载会特别慢，此链接是Git的镜像下载。</em></p>
+</li>
+</ul>
+<p>下载安装即可，正确的话 在桌面右键会发现里面比平时会多出“Git GuI Here”和“Git Bash Here”的选项，如下图</p>
+<p><img src="https://i.imgur.com/VNW3C4Z.png" alt=""></p>
+<p>下面是相关资料</p>
+<ol>
+<li><a href="https://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html" target="_blank" rel="noopener">如何在windows下安装Git</a></li>
+<li><a href="https://gitee.com/progit/" target="_blank" rel="noopener">Git入门教程</a></li>
+</ol>
+<h3 id="Git基本操作"><a href="#Git基本操作" class="headerlink" title="Git基本操作"></a>Git基本操作</h3><p><img src="https://upload-images.jianshu.io/upload_images/1712159-bb04c84caf75832f.png" alt=""></p>
+<hr>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><blockquote>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="https://baike.baidu.com/item/markdown/3245829?fr=aladdin" target="_blank" rel="noopener">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+</blockquote>
+<p>一. Hexo的安装</p>
+<p>桌面右击鼠标，点击Git Bash Here依次输入npm命令安装</p>
+<p> <mark>npm install hexo-cli -g</mark></p>
+<p> <mark>npm install –save</mark></p>
+<p> #如果npm命令无法正常运行，或者报错的话就用淘宝的npm源(cnpm)#</p>
+<blockquote>
+<p>在Git Bash Here里执行 npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a> <em>因为这里将npm换成了淘宝的cnpm，所以以后的npm命令统一改成cnpm来执行</em></p>
+</blockquote>
+<p>二. Hexo的初始化设置（建立Hexo相关文件夹）</p>
+<p>创建Hexo文件夹，任何一个盘都可以但最好别在C盘，例如我创建的路径是F:\Blog\Hexo<img src="https://i.imgur.com/aviEywb.png" alt=""></p>
+<p>在Hexo文件夹下右键打开Git Bash Here在里面依次运行如下命令</p>
+<p><mark>hexo init</mark></p>
+<p><mark>npm install</mark></p>
+<p><strong>分清自己换没换npm源，这里我是用npm做例子的</strong></p>
+<p>运行完上面的命令后Hexo会在你指定的文件夹下（也就是F:\Blog\Hexo）生成所需要的文件，生成后的Hexo目录如下：<img src="https://i.imgur.com/ycd12Au.png" alt=""></p>
+<p><em>不一定完全一致，以自己生成的为准只要接下来需要找的文件都有就没问题</em></p>
+<p>三. 安装Hexo的相关插件</p>
+<pre><code>npm install hexo-generator-index --save
+npm install hexo-generator-archive --save
+npm install hexo-generator-category --save
+npm install hexo-generator-tag --save
+npm install hexo-server --save
+npm install hexo-deployer-git --save
+npm install hexo-deployer-heroku --save
+npm install hexo-deployer-rsync --save
+npm install hexo-deployer-openshift --save
+npm install hexo-renderer-marked@0.2 --save
+npm install hexo-renderer-stylus@0.2 --save
+npm install hexo-generator-feed@1 --save
+npm install hexo-generator-sitemap@1 --save
+</code></pre><p><em>作者：RyaneLee<br>链接：<a href="https://www.jianshu.com/p/15ae47eddc56" target="_blank" rel="noopener">https://www.jianshu.com/p/15ae47eddc56</a><br>來源：简书</em></p>
+<p><em>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</em></p>
+<p>四. 本地查看效果</p>
+<p>依次执行下面语句，执行完即可登录localhost:4000查看效果</p>
+<pre><code>hexo generate
+hexo server
+</code></pre><p>网页栏上直接搜索localhost:4000,即可看到本地效果如下：<img src="https://upload-images.jianshu.io/upload_images/1712159-9426f901de7b2a47.png" alt="">到目前为止我们本地的博客已经搭建完毕了，但是我们只能通过本地连接查看自己的博客，如何通过网址来进入我们的博客或者说让其他人通过网址来查看自己的博客呢。<strong>Github Pages</strong>可以帮我们实现。</p>
+<h2 id="将博客部署到Github-pages上"><a href="#将博客部署到Github-pages上" class="headerlink" title="将博客部署到Github pages上"></a>将博客部署到Github pages上</h2><h3 id="Github-pages"><a href="#Github-pages" class="headerlink" title="Github pages"></a>Github pages</h3><blockquote>
+<p>GitHub Page，一般多用于托管个人的静态网站，所以现在很多人也用来它来搭建私人博客，也算是省去了购买服务器、域名等等一系列复杂的操作。搭建博客网站有各种各样的方法，像懂php的可以用WordPress，懂Java的可以用Jpress等等。如果你想简单和简约，那么我强烈推荐你使用Github Page。</p>
+</blockquote>
+<p>一. 注册GitHub账号</p>
+<ul>
+<li><a href="https://jingyan.baidu.com/article/4ae03de3d6f9c53eff9e6bdd.html" target="_blank" rel="noopener">如何在GitHub上注册账号</a></li>
+</ul>
+<p>二. 创建项目代码库</p>
+<ol>
+<li>注册登录后，在GitHub上建立一个属于我们自己的Github pages项目。点击<a href="https://github.com/new" target="_blank" rel="noopener">New repository</a></li>
+<li>创建要点如下：<img src="https://upload-images.jianshu.io/upload_images/1712159-3dfd013c098b6665.png" alt=""></li>
+</ol>
+<p>三. 配置SSH密钥</p>
+<blockquote>
+<p>配置Github的SSH密钥可以让本地git项目与远程的github建立联系，让我们在本地写了代码之后直接通过git操作就可以实现本地代码库与Github代码库同步。</p>
+</blockquote>
+<p>操作如下：</p>
+<ol>
+<li>查看自己本机是否存在SSH密钥(keys)，在桌面上打开Git Bash Here输入并运行<blockquote>
+<p>cd ~/. ssh </p>
+</blockquote>
+</li>
+</ol>
+<p>如果执行完显示No such file or directory则说明此电脑上没有SSH密钥。</p>
+<ul>
+<li><p>如果没有的话需要我们自己生成新的SSH Key：</p>
+<p>  输入ssh-keygen -t rsa -C “邮件地址@youremail.com”后会生成</p>
+<blockquote>
+<p>Generating public/private rsa key pair.</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;</p>
+</blockquote>
+<p>注意：</p>
+<pre><code>此处的邮箱地址输自己的，此处的[-C]是大写的[C].
+</code></pre><p>随后系统会让你输入密码：</p>
+<p>Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;</p>
+<p>Enter same passphrase again:&lt;再次输入加密串&gt;</p>
+<blockquote>
+<p>在回车的时候会提示让你输入一个密码，这个密码会在提交项目的时候使用。这个设置是防止别人往自己的项目里提交内容。</p>
+</blockquote>
+<pre><code>注意：在输入密码的时候并没有*号等标识，尽管输入完enter就好。
+</code></pre><p>设置成功后会看到如下的画面：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/32598-cf2af2bff37b1031.jpg" alt=""></p>
+<p>现在说明我们的SSH Key已经设置好了。</p>
+<h2 id="添加-SSH-key-到GitHub上"><a href="#添加-SSH-key-到GitHub上" class="headerlink" title="添加 SSH key 到GitHub上"></a>添加 SSH key 到GitHub上</h2><p>在本地上设置好了SSH后需要添加到GitHub上，以此来完成本地到远程服务器的连接。</p>
+<ul>
+<li>查看自己的SSH Key</li>
+</ul>
+<p>有两种方法</p>
+<pre><code>1. 在桌面上右键打开Git Bash Here,执行cd ~/.ssh这个命令
+2. 打开目录文件C:\Users\user.ssh\id_rsa.pub查看
+</code></pre><ul>
+<li>在GitHub账户中添加SSH key公钥</li>
+</ul>
+<p>1.复制自己的SSH，登录GitHub进入Account Settings</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1712159-efd0f7a036164831.png" alt=""></p>
+<p>2.选择SSH keys</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1712159-173750b1a4a73d95.png" alt=""></p>
+<p>3.粘贴密钥，添加即可</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1712159-0419298696b76bc3.png" alt=""></p>
+<ul>
+<li>测试</li>
+</ul>
+<p>输入下面的命令，查看是否设置成功，<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>部分不用修改</p>
+<pre><code>ssh -T git@github.com
+</code></pre><p>如果是下面的反馈：</p>
+<pre><code>The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)?
+</code></pre><p>直接输入yes就好，然后会看到：</p>
+<pre><code>Hi yourname! You&apos;ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre><blockquote>
+<p>其中如果之前在添加SSH时设了密码的话，仔细看显示的内容 有些步骤是需要输入你当时设定的密码才能正常进行的，用心观察就好</p>
+</blockquote>
+<ul>
+<li>设置用户信息</li>
+</ul>
+<blockquote>
+<p>现在已经可以通过本地SSH连接到远程的GitHub了，但是有些个人信息需要完善，Git会根据用户的名字和邮箱来进行提交。GitHub也是用这些信息来做权限处理的，输入下面的代码进行个人信息的设置，把名称和邮箱换成自己的。</p>
+</blockquote>
+<pre><code>git config --global user.name &quot;lnitial-heart&quot;//自己用户名
+git config --global user.email &quot;2302623337@qq.com&quot;//自己的邮箱
+</code></pre><ul>
+<li>SSH Key配置成功</li>
+</ul>
+<p>本机已经成功连接到GitHub了。下面是一些问题官方给出的解决文档：</p>
+<p><a href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="_blank" rel="noopener">GitHub Help - Generating SSH Keys</a></p>
+<p><a href="https://help.github.com/articles/error-permission-denied-publickey/" target="_blank" rel="noopener">Error: Permission denied (publickey)</a></p>
+<h2 id="将本地的Hexo文件更新到GitHub库中"><a href="#将本地的Hexo文件更新到GitHub库中" class="headerlink" title="将本地的Hexo文件更新到GitHub库中"></a>将本地的Hexo文件更新到GitHub库中</h2><ul>
+<li>登录GitHub打开刚刚新建的username.github.io项目<img src="https://i.imgur.com/8n2FGxr.png" alt=""></li>
+<li>进去后点击Clone or download找到HTTPS把网址复制下来，如下图：<img src="https://i.imgur.com/znDo14A.png" alt=""></li>
+<li>打开最开始创建的Hexo文件夹（F:\Blog\Hexo），找到_config.yml文件，用记事本打开这个文件<img src="https://i.imgur.com/cnQ9XXZ.png" alt=""></li>
+<li>在配置文件里做如下修改，保存<img src="https://upload-images.jianshu.io/upload_images/1712159-8ffc6e0fd819dff6.png" alt=""></li>
+<li>在Hexo文件下打开Git Bash Here执行以下命令：<blockquote>
+<p>hexo g</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>hexo d</p>
+</blockquote>
+<p>或者直接执行</p>
+<blockquote>
+<p>hexo g -d</p>
+</blockquote>
+<p>执行完之后会让你输入github的账号和密码，输入完后就可以登录我们自己部署在Github Pages服务器上的博客了。对应的地址是 username.github.io(我的是：lnitial-heart.github.io)。</p>
+<ul>
+<li>在浏览器上输入自己的lnitial-heart.github.io就可以查看我们的博客了，别人的手机和电脑也可以查看到。</li>
+</ul>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>至此，独立博客就完全搭建完毕了，这是我搭建此博客的全过程同时也是我的第一篇博文。</p>
+<h3 id="The-end"><a href="#The-end" class="headerlink" title="The end."></a>The end.</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/26/利用GitHub和Hexo搭建独立博客/" data-id="cjrdlgsy800032knudne1dcgo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-测试" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/26/测试/" class="article-date">
+  <time datetime="2019-01-26T14:51:46.068Z" itemprop="datePublished">2019-01-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/26/测试/">测试</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/26/测试/" data-id="cjrdlgsud00002knugw4lebvf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Python学习笔记（一）" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/26/Python学习笔记（一）/" class="article-date">
+  <time datetime="2019-01-26T14:51:46.037Z" itemprop="datePublished">2019-01-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/26/Python学习笔记（一）/">Python 学习笔记（一）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>python是一个跨平台语言，什么是跨平台呢。通俗点讲就是你在家里的台式windows系统上做好的Python程序，在学校笔记本上Max系统上一样可以运行，支持的系统还有Linux</p>
+</blockquote>
+<h3 id="那么多语言为什么选择Python呢，Python语言具有什么优点？"><a href="#那么多语言为什么选择Python呢，Python语言具有什么优点？" class="headerlink" title="那么多语言为什么选择Python呢，Python语言具有什么优点？"></a>那么多语言为什么选择Python呢，Python语言具有什么优点？</h3><ul>
+<li><a href="https://fishc.com.cn/forum.php?mod=viewthread&amp;tid=36461&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D403" target="_blank" rel="noopener">人生苦短，我用Python</a></li>
+<li><a href="https://blog.csdn.net/houzl/article/details/6631456" target="_blank" rel="noopener">每个程序员都应学习使用Python或Ruby</a></li>
+</ul>
+<p>有人计算过，Python或Ruby写出的程序的代码行数只相当于相对应的Java代码的行数的五分之一。</p>
+<p>如果没有绝对的必要，为什么要花这么多时间写出这么多的代码呢？</p>
+<p>而且，有人说，一个优秀的程序员能维护的代码量最多是2万行。这不区分用的语言究竟是汇编，C还是Python/Ruby/PHP/Lisp。</p>
+<p>所以，如果你用Python/Ruby写，你一个人干的，不管是干什么，如果换用Java/C/C++，那都需要一个5人的小团队来干。</p>
+<h3 id="综上所述，我想学Python"><a href="#综上所述，我想学Python" class="headerlink" title="综上所述，我想学Python"></a>综上所述，我想学Python</h3><h4 id="从IDLE启动Python"><a href="#从IDLE启动Python" class="headerlink" title="从IDLE启动Python"></a>从IDLE启动Python</h4><ul>
+<li>IDLE是个Python Shell，”Shell”的意思是”外壳”，通俗点讲就是一个通过键入文本与程序进行交互的一种途径。</li>
+</ul>
+<h4 id="打开IDLE"><a href="#打开IDLE" class="headerlink" title="打开IDLE"></a>打开IDLE</h4><p>我们可以看到Python相对应的版本信息：</p>
+<p><img src="https://i.imgur.com/pn9DlD6.png" alt=""></p>
+<p>其次会发现”&gt;&gt;&gt;”的提示符，这个提示符告诉我们Python已经准备好了，正等着我们键入Python指令呢。</p>
+<h3 id="与Python的第一次交流"><a href="#与Python的第一次交流" class="headerlink" title="与Python的第一次交流"></a>与Python的第一次交流</h3><p>在”&gt;&gt;&gt;”后输入：</p>
+<pre><code>print(&quot;Hello word!&quot;)
+</code></pre><p>显示</p>
+<pre><code>Hello word!
+</code></pre><p>如图</p>
+<p><img src="https://i.imgur.com/y9pZV2C.png" alt=""></p>
+<blockquote>
+<p>双引号” “括起来的是一个字符串，字符串就是文本，也就是我们想让Python显示出来的东西。</p>
+</blockquote>
+<p>注意：</p>
+<p><em>其中的双引号和括号缺一不可，如果丢失则会报错</em></p>
+<p><img src="https://i.imgur.com/mIGHTVD.png" alt=""></p>
+<h4 id="在Python中数字的计算"><a href="#在Python中数字的计算" class="headerlink" title="在Python中数字的计算"></a>在Python中数字的计算</h4><p>在”&gt;&gt;&gt;”后输入：</p>
+<pre><code>print(5+3)
+</code></pre><p>显示</p>
+<pre><code>8
+</code></pre><p>如图</p>
+<p><img src="https://i.imgur.com/Jg8dSsu.png" alt=""></p>
+<p>直接输入5+3的话，Python是否也会给出同样的答案呢，答案是一定的</p>
+<p><img src="https://i.imgur.com/dcbS5XQ.png" alt=""></p>
+<p>那如果输入123456789987654321*987654321123456789这个如此之长的式子呢？！</p>
+<p>我来试一下</p>
+<p><img src="https://i.imgur.com/gEG0iBa.png" alt=""></p>
+<blockquote>
+<p>可见Python同样给出了答案。其实任何一种编程语言都具有运算的能力，只是Python的数字运算没有复杂的长度限制，更便于计算。</p>
+</blockquote>
+<h4 id="字符串与字符串的相加"><a href="#字符串与字符串的相加" class="headerlink" title="字符串与字符串的相加"></a>字符串与字符串的相加</h4><p>在”&gt;&gt;&gt;”后输入：</p>
+<pre><code>print(&quot;lnitial&quot; + &quot; heart&quot;)
+</code></pre><p>显示</p>
+<pre><code>lnitial heart
+</code></pre><p>如图</p>
+<p><img src="https://i.imgur.com/vf0kJqQ.png" alt=""></p>
+<h4 id="字符串与数字的相乘"><a href="#字符串与数字的相乘" class="headerlink" title="字符串与数字的相乘"></a>字符串与数字的相乘</h4><p>在”&gt;&gt;&gt;”后输入：</p>
+<pre><code>print(&quot;Hello word!&quot; * 5)
+</code></pre><p>显示</p>
+<pre><code>Hello word!Hello word!Hello word!Hello word!Hello word!
+</code></pre><p>如图</p>
+<p><img src="https://i.imgur.com/Al6RF2N.png" alt=""></p>
+<blockquote>
+<p>在”Hello word!”的!后加一个转义符” <strong>\n</strong> “，也就是print(“Hello word!\n” * 5)</p>
+</blockquote>
+<p>输入后显示结果为：</p>
+<p><img src="https://s2.ax1x.com/2019/01/17/kpTtgK.png" alt="kpTtgK.png"></p>
+<pre><code>转义符&quot;\n&quot;有插入一个回车的意思
+</code></pre><h4 id="字符串与数字相加"><a href="#字符串与数字相加" class="headerlink" title="字符串与数字相加"></a>字符串与数字相加</h4><p>在”&gt;&gt;&gt;”后输入：</p>
+<pre><code>print(&quot;Hello word!&quot; + 5)
+</code></pre><p>显示</p>
+<pre><code>Traceback (most recent call last):
+File &quot;&lt;pyshell#16&gt;&quot;, line 1, in &lt;module&gt;
+print(&quot;Hello word!&quot; + 5)
+TypeError: can only concatenate str (not &quot;int&quot;) to str
+</code></pre><p>如图</p>
+<p><img src="https://s2.ax1x.com/2019/01/18/kpTWDg.png" alt="kpTWDg.png"></p>
+<ul>
+<li>Python为什么会报错</li>
+</ul>
+<p>在Python中不能把完全不同的两种东西加在一起，比如说这里的数字和文本，正是这个原因<em>print(“Hello word!” + 5)</em>才会报错。这就好比在说”一个苹果加上五个鸭梨会是多少呢”一样没有多大意义同时也没有这个规定。不过像<strong><em>print(“Hello word!” </em> 5)*</strong>这样，乘以一个整数来翻倍就具有一定意义了，这个例子就好比在说把”一个苹果给我翻五倍是多少”答案自然是五个苹果(五个Hello word!)。</p>
+<h3 id="课后练习"><a href="#课后练习" class="headerlink" title="课后练习"></a>课后练习</h3><ul>
+<li>IDLE是什么？</li>
+</ul>
+<p>IDLE是一个Python Shell。shell的意思是”外壳”，基本上来讲就是通过键入文本与程序进行交互的途径！像我们windows那个cmd窗口，linux那个黑乎乎的命令窗口，他们都是shell，利用他们我们就可以给操作系统下达命令。同样的我们可以利用IDLE这个shell与Python进行互动。</p>
+<ul>
+<li>print()的作用是什么？</li>
+</ul>
+<p>print( )会在输出窗口中显示一些文本</p>
+<blockquote>
+<p>输出窗口就是IDLE shell</p>
+</blockquote>
+<ul>
+<li>Python中表示乘法的符号是什么？</li>
+</ul>
+<p>Python中的乘号是*(我们眼里的星号)</p>
+<h3 id="The-end"><a href="#The-end" class="headerlink" title="The end."></a>The end.</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/26/Python学习笔记（一）/" data-id="cjrdlgsva00012knu3wh5dimt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/26/hello-world/" class="article-date">
@@ -136,6 +617,22 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/01/26/Python学习笔记（二）/">Python 学习笔记（二）</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/26/利用GitHub和Hexo搭建独立博客/">利用GitHub和Hexo搭建独立博客</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/26/测试/">测试</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/26/Python学习笔记（一）/">Python 学习笔记（一）</a>
+          </li>
         
           <li>
             <a href="/2019/01/26/hello-world/">Hello World</a>
