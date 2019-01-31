@@ -92,7 +92,9 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/29/kQItGn.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/29/kQI0qU.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/29/kQI6i9.png">
-<meta property="og:updated_time" content="2019-01-29T14:12:19.778Z">
+<meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2013/11/python_while_loop.jpg">
+<meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2013/11/loop-over-python-list-animation.gif">
+<meta property="og:updated_time" content="2019-01-31T13:02:52.284Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 学习笔记（三）">
 <meta name="twitter:description" content="这节知识点较多，所以整篇我用一个文字游戏记录和演示。 Wordgame： print(&amp;quot;文字游戏&amp;quot;) temp = input(&amp;quot;猜猜我现在心里想的什么数字？&amp;quot;) guess = int(temp) if guess == 8:     print(&amp;quot;居然猜对了~~&amp;quot;)     print(&amp;quot;哼，猜对也没有奖励&amp;quot;) e">
@@ -393,7 +395,7 @@ print(&quot;游戏结束，不玩啦！&quot;)
 <p>逻辑运算符，如下图：</p>
 <p><img src="https://s2.ax1x.com/2019/01/29/kQAysf.png" alt=""></p>
 <p>Python的条件分支语法：</p>
-<pre><code>if 条件:
+<pre><code>if 判断条件:
     条件为真（True）执行的操作
 else:
     条件为假（False）执行的操作
@@ -421,9 +423,13 @@ print(&quot;游戏结束，不玩啦&quot;)
 <p>对于用户来说，体验效果也是不尽人意的，因为只能猜一次，无论猜对了或者猜错了都没有第二次机会。</p>
 <p>达到这个目的也不是很难我们只需要在程序里引用一个<strong>while</strong>即可：</p>
 <h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><pre><code>while的循环语法
-    while #后跟一个条件：
+    while #后跟一个判断条件：
         条件为真（True）执行的操作
-</code></pre><p><em>如果while后跟着的条件成立就会执行True的操作</em></p>
+</code></pre><p>执行语句可以是单个语句或语句块。判断条件可以是任何表达式，任何非零、或非空（null）的值均为<strong>true</strong></p>
+<p>当判断结果为False的时候，循环结束。</p>
+<p>执行流程图如下：</p>
+<p><img src="http://www.runoob.com/wp-content/uploads/2013/11/python_while_loop.jpg" alt=""></p>
+<h4 id="Gif-演示-Python-while语句执行过程："><a href="#Gif-演示-Python-while语句执行过程：" class="headerlink" title="Gif 演示 Python while语句执行过程："></a>Gif 演示 Python while语句执行过程：</h4><p><img src="http://www.runoob.com/wp-content/uploads/2013/11/loop-over-python-list-animation.gif" alt=""></p>
 <p>改进代码如下：</p>
 <pre><code>print(&quot;文字游戏 2.5&quot;)
 temp = input(&quot;猜猜我现在心里想的什么数字？&quot;)
@@ -442,9 +448,7 @@ while guess != 8:
             print(&quot;猜错啦！&quot;)
             print(&quot;小点，往大了猜！&quot;)
 print(&quot;游戏结束，不玩啦&quot;)
-</code></pre><p>这里还有别的知识点今天就先不详细说了<strong>-.-</strong></p>
-<p>先把第三个改进计划概括出来叭！</p>
-<h2 id="第三个改进计划之引入外援"><a href="#第三个改进计划之引入外援" class="headerlink" title="第三个改进计划之引入外援"></a>第三个改进计划之引入外援</h2><h3 id="random模板"><a href="#random模板" class="headerlink" title="random模板"></a><strong>random</strong>模板</h3><p>这个<strong>random</strong>模板里有一个函数叫做<strong>randint( )</strong></p>
+</code></pre><h2 id="第三个改进计划之引入外援"><a href="#第三个改进计划之引入外援" class="headerlink" title="第三个改进计划之引入外援"></a>第三个改进计划之引入外援</h2><h3 id="random模板"><a href="#random模板" class="headerlink" title="random模板"></a><strong>random</strong>模板</h3><p>这个<strong>random</strong>模板里有一个函数叫做<strong>randint( )</strong></p>
 <blockquote>
 <p>Ta的作用是返回一个随机的<strong>整数</strong></p>
 </blockquote>
@@ -470,7 +474,7 @@ while guess != secret:
             print(&quot;猜错啦！&quot;)
             print(&quot;小了，小了，往大点猜叭！&quot;)
 print(&quot;游戏结束，不玩啦&quot;)
-</code></pre><h2 id="未完待续……"><a href="#未完待续……" class="headerlink" title="未完待续……"></a>未完待续……</h2>
+</code></pre><h2 id="The-end"><a href="#The-end" class="headerlink" title="The end"></a>The end</h2>
       
     </div>
     
@@ -618,7 +622,7 @@ print(&quot;游戏结束，不玩啦&quot;)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#让我们先来完成第一个改进计划"><span class="nav-number">1.</span> <span class="nav-text">让我们先来完成第一个改进计划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#条件分支"><span class="nav-number">1.1.</span> <span class="nav-text">条件分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二个改进计划"><span class="nav-number">2.</span> <span class="nav-text">第二个改进计划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#while循环"><span class="nav-number">2.1.</span> <span class="nav-text">while循环</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三个改进计划之引入外援"><span class="nav-number">3.</span> <span class="nav-text">第三个改进计划之引入外援</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#random模板"><span class="nav-number">3.1.</span> <span class="nav-text">random模板</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#导入random模板"><span class="nav-number">3.1.1.</span> <span class="nav-text">导入random模板</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待续……"><span class="nav-number">4.</span> <span class="nav-text">未完待续……</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#让我们先来完成第一个改进计划"><span class="nav-number">1.</span> <span class="nav-text">让我们先来完成第一个改进计划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#条件分支"><span class="nav-number">1.1.</span> <span class="nav-text">条件分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二个改进计划"><span class="nav-number">2.</span> <span class="nav-text">第二个改进计划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#while循环"><span class="nav-number">2.1.</span> <span class="nav-text">while循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Gif-演示-Python-while语句执行过程："><span class="nav-number">2.1.1.</span> <span class="nav-text">Gif 演示 Python while语句执行过程：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三个改进计划之引入外援"><span class="nav-number">3.</span> <span class="nav-text">第三个改进计划之引入外援</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#random模板"><span class="nav-number">3.1.</span> <span class="nav-text">random模板</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#导入random模板"><span class="nav-number">3.1.1.</span> <span class="nav-text">导入random模板</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-end"><span class="nav-number">4.</span> <span class="nav-text">The end</span></a></li></ol></div>
             
 
           </div>
